@@ -1,8 +1,31 @@
 {
+    "name": "kodnificent/covid-19-estimator-php",
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.1"
     },
-    "require": {
-        "guzzlehttp/guzzle": "~6.0"
+    "autoload" : {
+        "files": [
+            "src/estimator.php"
+        ],
+
+        "psr-4": {
+            "Kodnificent\\Covid19ImpactEstimator\\" : "src"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "tests/helpers.php"
+        ],
+        "psr-4": {
+            "Kodnificent\\Covid19ImpactEstimator\\Tests\\" : "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     }
 }
